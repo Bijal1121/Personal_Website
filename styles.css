@@ -546,18 +546,20 @@ main {
     padding: 80px 0;
     background-color: var(--bg-color);
     min-height: 100vh;
-    position: relative;  /* Added to create stacking context */
-    z-index: 1;  /* Ensure proper stacking */
 }
 
-/* Project Grid - Increased spacing */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
-    gap: 5rem 4rem;  /* Increased vertical and horizontal gap */
-    padding: 4rem;
+.projects .container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 4rem 0;
     justify-content: center;
 }
 
@@ -568,11 +570,12 @@ main {
     overflow: hidden;
     perspective: 1000px;
     height: 400px;
-    width: 320px;
+    width: 100%;
+    max-width: 380px;
     position: relative;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0;  /* Reset any inherited margins */
+    margin: 0 auto;
 }
 
 .project-card-inner {
@@ -736,33 +739,46 @@ main {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
+    .projects .container {
+        padding: 0 3rem;
+    }
+    
     .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-        gap: 4rem 3rem;  /* Adjusted for medium screens */
-        padding: 3rem;
+        gap: 4rem;
     }
     
     .project-card {
-        height: 380px;
-        width: 300px;
+        max-width: 340px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
-        gap: 3rem 2.5rem;  /* Adjusted for smaller screens */
-        padding: 2rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .projects .container {
+        padding: 0 2rem;
     }
     
     .project-card {
-        height: 360px;
-        width: 280px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects .container {
+        padding: 0 1.5rem;
     }
     
-    .project-card-front img {
-        height: 180px;
+    .project-grid {
+        gap: 2.5rem;
+    }
+    
+    .project-card {
+        max-width: 300px;
     }
 }
 
