@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijal Bharadva - Data Scientist & Analyst</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Three.js and additional libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.1/dist/gsap.min.js"></script>
+    <meta name="description" content="Bijal Bharadva - Data Scientist and Analyst Portfolio">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode" role="switch" aria-checked="false">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo" role="banner">BB</div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="menubar">
+            <li role="none"><a href="#home" role="menuitem">Home</a></li>
+            <li role="none"><a href="#about" role="menuitem">About</a></li>
+            <li role="none"><a href="#education" role="menuitem">Education</a></li>
+            <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+            <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+            <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <main>
+        <section id="home" class="home" aria-label="Introduction">
+            <div class="particles-container" id="particles-js"></div>
+            <div class="container">
+                <div class="content">
+                    <div class="intro-text" data-aos="fade-up">
+                        <span class="greeting">Hello, I'm</span>
+                        <h1 class="title">
+                            <span class="name">Bijal Bharadva</span>
+                            <span class="profession">
+                                <span class="highlight">Data Scientist</span> & 
+                                <span class="highlight">Analyst</span>
+                            </span>
+                        </h1>
+                        <div class="dynamic-text" data-aos="fade-up" data-aos-delay="200" aria-live="polite">
+                            Transforming Data into Insights
+                        </div>
+                        <p class="intro-description" data-aos="fade-up" data-aos-delay="300">
+                            Specializing in machine learning, data visualization, and predictive analytics
+                        </p>
+                    </div>
+                    
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contact" class="btn primary">Get in Touch</a>
+                        <a href="#projects" class="btn secondary">View Projects</a>
+                        <a href="C:\Users\Bijal\Desktop\Bijal\testcase\Bijal_s_Resume___DATA_ANALYST.pdf" class="btn resume" download aria-label="Download Resume">
+                            <span class="btn-content">
+                                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                Resume
+                            </span>
+                            <span class="btn-background"></span>
+                        </a>
+                    </div>
+                    <script>
+                        // Fade out scroll indicator on scroll
+                        window.addEventListener('scroll', function() {
+                            const scrollIndicator = document.querySelector('.scroll-indicator');
+                            const scrollPosition = window.scrollY;
+                            
+                            // Start fading out after 100px of scroll
+                            if (scrollPosition > 100) {
+                                const opacity = Math.max(0, 1 - (scrollPosition - 100) / 200); // Fade over 200px
+                                scrollIndicator.style.opacity = opacity;
+                            } else {
+                                scrollIndicator.style.opacity = 1;
+                            }
+                            
+                            // Hide completely when fully faded
+                            if (scrollPosition > 300) {
+                                scrollIndicator.style.visibility = 'hidden';
+                            } else {
+                                scrollIndicator.style.visibility = 'visible';
+                            }
+                        });
+                    </script>
+
+                    <!-- <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+                        <span class="scroll-text">Scroll to explore</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div> -->
+                </div>
+
+                <!-- <div class="visualization-container">
+                    <div id="globe-container" class="visualization" aria-hidden="true"></div>
+                    <div class="data-points-overlay"></div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" aria-label="About Me">
+            <div class="about-bg-animation">
+                <canvas id="dataFlow"></canvas>
+            </div>
+            
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    About Me
+                    <span class="title-underline"></span>
+                </h2>
+                
+                <div class="about-content">
+                    <div class="profile-container" data-aos="fade-right">
+                        <div class="profile-wrapper">
+                            <img src="Billu.jpg" alt="Bijal Bharadva" class="profile-image">
+                            <div class="profile-overlay">
+                                <div class="social-links">
+                                    <a href="https://www.linkedin.com/in/bijal-bharadva/" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Bijal1121" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                                    <a href="mailto:bijal.bharadva@gmail.com" aria-label="Email Me"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bio-content" data-aos="fade-left">
+                        <div class="bio-text">
+                            <p class="greeting" data-aos="fade-up" data-aos-delay="200">
+                                Hello! I'm <span class="highlight">Bijal Bharadva</span>
+                            </p>
+                            <p class="bio-description" data-aos="fade-up" data-aos-delay="300">
+                                A passionate Data Scientist and Analyst with expertise in transforming complex data into actionable insights. With a strong foundation in statistical analysis and machine learning, I specialize in developing data-driven solutions that help businesses make informed decisions.
+                            </p>
+                            <p class="bio-mission" data-aos="fade-up" data-aos-delay="400">
+                                My mission is to bridge the gap between raw data and meaningful business outcomes, using advanced analytics and visualization techniques to uncover patterns and drive innovation.
+                            </p>
+                        </div>
+
+                        <div class="stats-container" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item" data-value="5">
+                                <div class="stat-circle">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                                        <circle class="stat-circle-fill" cx="50" cy="50" r="45"/>
+                                    </svg>
+                                    <div class="stat-content">
+                                        <span class="stat-number">2+</span>
+                                        <span class="stat-label">Years Experience</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-value="50">
+                                <div class="stat-circle">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                                        <circle class="stat-circle-fill" cx="50" cy="50" r="45"/>
+                                    </svg>
+                                    <div class="stat-content">
+                                        <span class="stat-number">10+</span>
+                                        <span class="stat-label">Projects Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-item" data-value="95">
+                                <div class="stat-circle">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                                        <circle class="stat-circle-fill" cx="50" cy="50" r="45"/>
+                                    </svg>
+                                    <div class="stat-content">
+                                        <span class="stat-number">95%</span>
+                                        <span class="stat-label">Client Satisfaction</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="expertise-tags" data-aos="fade-up" data-aos-delay="600">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Statistical Modeling</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Data Visualization</span>
+                        </div> -->
+
+                        <!-- <div class="cta-container" data-aos="fade-up" data-aos-delay="700">
+                            <a href="/path/to/resume.pdf" class="btn cta-btn" download>
+                                <span class="btn-content">
+                                    <i class="fas fa-download"></i>
+                                    Download Resume
+                                </span>
+                                <span class="btn-glow"></span>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2024 - 2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Master's in Science - Computer Science</h3>
+                            <p class="institution">San Diego State University</p>
+                            <ul class="education-details">
+                                <li>Specialized in Data Visualization, Model Building, Statistical Analysis</li>
+                                <li>Key coursework: Principles & Techniques of Data Science, Machine Learning, Algorithm Analysis & Design</li>
+                                <li>GPA: 3.6/4.0</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2019 - 2023</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Bachelor's in Computer Engineering</h3>
+                            <p class="institution">University of Mumbai</p>
+                            <ul class="education-details">
+                                <li>Focus on Foundations of Computer Science, Problem Solving, Programming Languages</li>
+                                <li>Key coursework: Database Management, Artificial Intelligence, Quantitative Analysis, Information Retrieval</li>
+                                <li>GPA: 3.95/4.0</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Section -->
+        <section class="animation-section">
+            <div class="container">
+                <div class="animation-wrapper" data-aos="fade-up">
+                    <!-- Floating shapes animation -->
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div>
+                    </div>
+
+                    <!-- Data flow animation -->
+                    <div class="data-flow">
+                        <div class="data-stream data-stream-1"></div>
+                        <div class="data-stream data-stream-2"></div>
+                        <div class="data-stream data-stream-3"></div>
+                    </div>
+
+                    <!-- Connection points -->
+                    <div class="connection-points">
+                        <div class="point point-1"></div>
+                        <div class="point point-2"></div>
+                        <div class="point point-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills" aria-label="Skills">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    Skills & Expertise
+                    <span class="title-underline"></span>
+                </h2>
+
+                <!-- Skills Filter -->
+                <div class="skills-filter" data-aos="fade-up">
+                    <button class="skill-filter-btn active" data-category="all">All Skills</button>
+                    <button class="skill-filter-btn" data-category="languages">Languages</button>
+                    <button class="skill-filter-btn" data-category="visualization">Data Analysis & Visualization</button>
+                    <button class="skill-filter-btn" data-category="database">Database</button>
+                    <button class="skill-filter-btn" data-category="tools">Tools</button>
+                    <button class="skill-filter-btn" data-category="soft-skills">Soft Skills</button>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Languages -->
+                    <div class="skill-category" data-category="languages" data-aos="fade-up">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-progress="90">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fab fa-r-project"></i>
+                                <span>R</span>
+                            </div>
+                            <div class="skill-item" data-progress="80">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML/CSS</span>
+                            </div>
+                            <div class="skill-item" data-progress="75">
+                                <i class="fas fa-code"></i>
+                                <span>C/C++</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Analysis & Visualization -->
+                    <div class="skill-category" data-category="visualization" data-aos="fade-up">
+                        <h3>Data Analysis & Visualization</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-progress="90">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Power BI</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Tableau</span>
+                            </div>
+                            <div class="skill-item" data-progress="88">
+                                <i class="fas fa-file-excel"></i>
+                                <span>Excel Sheet</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fas fa-chart-area"></i>
+                                <span>ggplot2</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Matplotlib</span>
+                            </div>
+                            <div class="skill-item" data-progress="80">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Seaborn</span>
+                            </div>
+                            <div class="skill-item" data-progress="80">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Plotly</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Management -->
+                    <div class="skill-category" data-category="database" data-aos="fade-up">
+                        <h3>Database Management</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-progress="90">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fas fa-server"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-item" data-progress="80">
+                                <i class="fab fa-google"></i>
+                                <span>BigQuery</span>
+                            </div>
+                            <div class="skill-item" data-progress="75">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-item" data-progress="75">
+                                <i class="fas fa-database"></i>
+                                <span>Oracle</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-category" data-category="tools" data-aos="fade-up">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-progress="90">
+                                <i class="fab fa-r-project"></i>
+                                <span>R Studio</span>
+                            </div>
+                            <div class="skill-item" data-progress="90">
+                                <i class="fas fa-book-reader"></i>
+                                <span>Jupyter Notebooks</span>
+                            </div>
+                            <div class="skill-item" data-progress="85">
+                                <i class="fab fa-google"></i>
+                                <span>Google Colab</span>
+                            </div>
+                            <div class="skill-item" data-progress="90">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-item" data-progress="80">
+                                <i class="fas fa-tags"></i>
+                                <span>Labelme</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skill-category" data-category="soft-skills" data-aos="fade-up">
+                        <h3>Soft Skills</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-progress="95">
+                                <i class="fas fa-users"></i>
+                                <span>Team Collaboration</span>
+                            </div>
+                            <div class="skill-item" data-progress="90">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Problem Solving</span>
+                            </div>
+                            <div class="skill-item" data-progress="90">
+                                <i class="fas fa-comments"></i>
+                                <span>Stakeholder Communication</span>
+                            </div>
+                            <div class="skill-item" data-progress="95">
+                                <i class="fas fa-search"></i>
+                                <span>Attention to Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects" aria-label="Portfolio Projects">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Projects</h2>
+                
+                <!-- Project Filters -->
+                <div class="project-filters" data-aos="fade-up">
+                    <button class="filter-btn active" data-category="all" aria-pressed="true">
+                        All Projects
+                    </button>
+                    <button class="filter-btn" data-category="machine-learning" aria-pressed="false">
+                        Machine Learning
+                    </button>
+                    <button class="filter-btn" data-category="data-visualization" aria-pressed="false">
+                        Data Visualization
+                    </button>
+                    <button class="filter-btn" data-category="data-analysis" aria-pressed="false">
+                        Data Analysis
+                    </button>
+                    <button class="filter-btn" data-category="predictive-modeling" aria-pressed="false">
+                        Predictive Modeling
+                    </button>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="project-grid" role="list">
+                    <!-- Sanskrit ASR -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="machine-learning">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="Sanskrit_ASR.png" alt="Customer Segmentation visualization showing clustered customer groups">
+                                <div class="project-card-header">
+                                    <h3>Sanskrit Automatic Speech Recognition</h3>
+                                    <span class="project-category">Natural Language Processing</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Customer Segmentation Analysis</h3>
+                                    <p>An end-to-end automatic speech recognition system for Sanskrit was developed using advanced preprocessing and deep learning techniques, achieving a competitive Word Error Rate (WER) of 0.44.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/jayc9135/Sanskrit-ASR" class="btn" role="button" aria-label="View Sanskrit ASR Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sales Forecasting Project -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="predictive-modeling">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="2.jpg" alt="Sales Forecasting dashboard showing prediction trends">
+                                <div class="project-card-header">
+                                    <h3>Sales Forecasting System</h3>
+                                    <span class="project-category">Predictive Modeling</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Sales Forecasting System</h3>
+                                    <p>Built a time series forecasting model to predict future sales trends, incorporating seasonal patterns and external factors, achieving 92% accuracy in predictions.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn" role="button" aria-label="View Sales Forecasting Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Market Basket Analysis -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="data-analysis">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="3.jpg" alt="Market Basket Analysis showing product associations">
+                                <div class="project-card-header">
+                                    <h3>Market Basket Analysis</h3>
+                                    <span class="project-category">Data Analysis</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Market Basket Analysis</h3>
+                                    <p>Implemented association rule mining to analyze customer purchase patterns, identifying key product combinations that led to a 15% increase in cross-selling opportunities.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn" role="button" aria-label="View Market Basket Analysis Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Interactive Dashboard -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="data-visualization">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="4.jpg" alt="Interactive Business Intelligence Dashboard">
+                                <div class="project-card-header">
+                                    <h3>Business Intelligence Dashboard</h3>
+                                    <span class="project-category">Data Visualization</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Business Intelligence Dashboard</h3>
+                                    <p>Created an interactive dashboard for real-time monitoring of KPIs, featuring drill-down capabilities and automated reporting, reducing report generation time by 80%.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn" role="button" aria-label="View Dashboard Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sentiment Analysis -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="machine-learning">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="https://picsum.photos/400/300?random=5" alt="Sentiment Analysis visualization showing customer feedback analysis">
+                                <div class="project-card-header">
+                                    <h3>Customer Feedback Analysis</h3>
+                                    <span class="project-category">Machine Learning</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Customer Feedback Analysis</h3>
+                                    <p>Developed an NLP-based sentiment analysis system to analyze customer reviews and social media mentions, achieving 88% accuracy in sentiment classification.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn" role="button" aria-label="View Sentiment Analysis Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Supply Chain Optimization -->
+                    <article class="project-card" role="listitem" data-aos="fade-up" data-category="predictive-modeling">
+                        <div class="project-card-inner" tabindex="0">
+                            <div class="project-card-front">
+                                <img src="https://picsum.photos/400/300?random=6" alt="Supply Chain Optimization Model visualization">
+                                <div class="project-card-header">
+                                    <h3>Supply Chain Optimization</h3>
+                                    <span class="project-category">Predictive Modeling</span>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <div class="project-info">
+                                    <h3>Supply Chain Optimization</h3>
+                                    <p>Implemented a predictive modeling system for inventory optimization and demand forecasting, reducing stockout incidents by 40% and inventory costs by 25%.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn" role="button" aria-label="View Supply Chain Project">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" role="alert" aria-live="polite" hidden>
+                    No projects found for the selected category.
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Experience</h2>
+                <div class="experience-timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2022 - Present</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-wrapper">
+                                <h3>Senior Data Scientist</h3>
+                                <p class="company">Company Name</p>
+                                <ul class="achievements">
+                                    <li>Led a team of data scientists in developing predictive models for customer behavior analysis</li>
+                                    <li>Implemented machine learning solutions that improved business efficiency by 35%</li>
+                                    <li>Collaborated with cross-functional teams to deliver data-driven insights</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">SQL</span>
+                                    <span class="tech-tag">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2020 - 2022</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-wrapper">
+                                <h3>Data Analyst</h3>
+                                <p class="company">Company Name</p>
+                                <ul class="achievements">
+                                    <li>Developed and maintained data analytics dashboards using Power BI</li>
+                                    <li>Conducted statistical analysis to identify key business trends</li>
+                                    <li>Created automated reporting systems that saved 20 hours per week</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Power BI</span>
+                                    <span class="tech-tag">Excel</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">SQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2019 - 2020</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-wrapper">
+                                <h3>Business Intelligence Analyst</h3>
+                                <p class="company">Company Name</p>
+                                <ul class="achievements">
+                                    <li>Built interactive dashboards for executive decision-making</li>
+                                    <li>Optimized database queries improving report generation speed by 40%</li>
+                                    <li>Trained junior analysts in data visualization best practices</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Tableau</span>
+                                    <span class="tech-tag">SQL</span>
+                                    <span class="tech-tag">R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2018 - 2019</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-wrapper">
+                                <h3>Data Analytics Intern</h3>
+                                <p class="company">Company Name</p>
+                                <ul class="achievements">
+                                    <li>Assisted in developing predictive models for customer segmentation</li>
+                                    <li>Created automated data cleaning and preprocessing pipelines</li>
+                                    <li>Contributed to monthly reporting and analysis presentations</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Pandas</span>
+                                    <span class="tech-tag">Matplotlib</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 5 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2017 - 2018</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-wrapper">
+                                <h3>Research Assistant</h3>
+                                <p class="company">University Name</p>
+                                <ul class="achievements">
+                                    <li>Conducted data analysis for research projects in machine learning</li>
+                                    <li>Published 2 research papers in international conferences</li>
+                                    <li>Developed algorithms for pattern recognition in large datasets</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">MATLAB</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">LaTeX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-label="Contact Information">
+            <div class="container">
+                <div class="contact-header" data-aos="fade-up">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="section-subtitle">Feel free to reach out for collaborations, questions, or opportunities.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <p class="contact-greeting">I'd love to hear from you!</p>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:bijal.bharadva@gmail.com">bijal.bharadva@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+16196655810">+16196655810</a></p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h3>Location</h3>
+                                    <p>San Diego, CA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links" role="list">
+                            <a href="https://www.linkedin.com/in/bijal-bharadva/" class="social-link" role="listitem" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/Bijal1121" class="social-link" role="listitem" aria-label="GitHub Profile">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:bijal.bharadva@gmail.com" class="social-link" role="listitem" aria-label="Email Me">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" data-aos="fade-left" role="form" aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                   aria-required="true" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required 
+                                   aria-required="true" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" required 
+                                    aria-required="true" class="form-input" rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="form-status" role="alert" aria-live="polite" hidden>
+                            <div class="success-message">
+                                <i class="fas fa-check-circle"></i>
+                                Message sent successfully!
+                            </div>
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Oops! Something went wrong. Please try again.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="contact-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-dots"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 Bijal Bharadva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Three.js and additional libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.1/dist/gsap.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Google Maps with async loading -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&loading=async&callback=initMap">
+    </script>
+    <!-- Isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Error handling for external resources
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'SCRIPT' || e.target.tagName === 'IMG') {
+                console.warn('Resource failed to load:', e.target.src);
+                // Handle specific resource failures
+                if (e.target.src.includes('google')) {
+                    const mapElement = document.getElementById('map');
+                    if (mapElement) {
+                        mapElement.innerHTML = '<p>Map temporarily unavailable</p>';
+                    }
+                }
+                if (e.target.src.includes('three.js')) {
+                    const globeContainer = document.getElementById('globe-container');
+                    if (globeContainer) {
+                        globeContainer.innerHTML = '<p>3D visualization temporarily unavailable</p>';
+                    }
+                }
+            }
+        }, true);
+
+        // Fallback for missing images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.getElementsByTagName('img');
+            for (let img of images) {
+                img.onerror = function() {
+                    this.src = 'path/to/fallback-image.jpg';
+                    this.alt = 'Image unavailable';
+                };
+            }
+        });
+
+        // Handle image loading errors
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.getElementsByTagName('img');
+            for (let img of images) {
+                img.onerror = function() {
+                    this.src = 'https://picsum.photos/400/300?random=' + Math.random();
+                    this.alt = 'Project preview image';
+                };
+            }
+        });
+
+        // Initialize Isotope for project filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.querySelector('.project-grid');
+            const iso = new Isotope(grid, {
+                itemSelector: '.project-card',
+                layoutMode: 'fitRows'
+            });
+
+            // Filter items on button click
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-category');
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to current button
+                    this.classList.add('active');
+                    
+                    if (filterValue === 'all') {
+                        iso.arrange({filter: '*'});
+                    } else {
+                        iso.arrange({filter: `[data-category="${filterValue}"]`});
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
