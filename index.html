@@ -73,7 +73,7 @@
                     <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
                         <a href="#contact" class="btn primary">Get in Touch</a>
                         <a href="#projects" class="btn secondary">View Projects</a>
-                        <a href="C:\Users\Bijal\Desktop\Bijal\testcase\Bijal_s_Resume___DATA_ANALYST.pdf" class="btn resume" download aria-label="Download Resume">
+                        <a href="https://drive.google.com/file/d/1XYMvgEG1EAHtGSftiQsTt5SF2IvZv5aS/view?usp=sharing" class="btn resume" download aria-label="Download Resume">
                             <span class="btn-content">
                                 <i class="fas fa-file-alt" aria-hidden="true"></i>
                                 Resume
@@ -973,6 +973,12 @@
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
+        // Show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
         try {
             // Create a reference to the 'contacts' node in your database
             const contactsRef = ref(database, 'contacts');
@@ -994,6 +1000,10 @@
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('Error sending message. Please try again.');
+        } finally {
+            // Reset button state
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
         }
     });
 </script>
